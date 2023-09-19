@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Aquí puedes agregar tus estilos CSS o enlazar a una hoja de estilos externa -->
+</head>
+<body>
+    <div class="container px-5 py-10 mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-02" id="skillsContainer">
+            <!-- Las habilidades se agregarán aquí dinámicamente -->
+        </div>
+    </div>
+
+    <script>
+        // Array de habilidades
+        const skills = [
+            "HTML",
+            "JavaScript",
+            "React",
+            "Next.js",
+            "Node",
+            "Python",
+            "GitHub",
+            "Figma",
+            "Tailwind CSS",
+            "Firebase",
+            "SQL",
+            "Django",
+        ];
+
+        // Función para generar las habilidades
+        function generateSkills() {
+            const container = document.getElementById('skillsContainer');
+            skills.forEach(skill => {
+                const skillDiv = document.createElement('div');
+                skillDiv.className = "p-2 w-full";
+
+                const innerDiv = document.createElement('div');
+                innerDiv.className = "bg-gray-50 border-solid border-2 border-gray-100 rounded flex p-4 h-full items-center hover:bg-gray-400";
+
+                const skillSpan = document.createElement('span');
+                skillSpan.className = "title-font font-medium text-black";
+                skillSpan.textContent = skill;
+
+                innerDiv.appendChild(skillSpan);
+                skillDiv.appendChild(innerDiv);
+                container.appendChild(skillDiv);
+            });
+        }
+
+        // Llamar a la función para generar las habilidades
+        generateSkills();
+    </script>
+</body>
+</html>
